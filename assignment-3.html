@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 3</title>
+</head>
+<body>
+    <h1>To-Do app</h1>
+    <h3>DOM</h3>
+    <input type="text" id="input-text" placeholder="Enter task" onfocus="this.value=''">
+    <button type="submit" id="submit">Add</button>
+    <ul id="list"></ul>
+    <script>
+        const ul = document.getElementById("list");
+        document.getElementById("submit").addEventListener("click", () => {
+            const inputText = document.getElementById("input-text").value;
+            const node = document.createElement("li");
+            const textnode = document.createTextNode(inputText);
+            node.appendChild(textnode,inputText );
+            console.log(node);
+            document.getElementById("list").appendChild(node);
+        });
+    </script>
+</body>
+</html>
